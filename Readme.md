@@ -58,3 +58,19 @@ const accounts = await metamask.request({ method: "eth_requestAccounts" });
 ```
 
 - And Boom we have our wallet Accounts store in our accounts variable
+
+## Making our smart contract (solidity + hardhat)
+
+- Install hardhat using command (This is also for initialising a new project)
+
+```bash
+npx hardhat
+```
+
+- In our contracts folder make a contract 'Transaction.sol' and write our contract to transfer money.
+- After writing our contract make a script for deploying our contract in 'scripts' folder.
+- Then we will deploy our contract using hardhat command :
+
+```bash
+npx hardhat run scripts/deploy.js --network rinkeby
+```
