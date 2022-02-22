@@ -6,6 +6,11 @@ Follow along with Clever Programmer's tutorial video
 
 ## Tech used
 
+- Next JS
+- Sanity DB
+- Solidity
+- Hardhat
+
 ## Folder Structure
 
 - Client
