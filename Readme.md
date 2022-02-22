@@ -74,3 +74,22 @@ npx hardhat
 ```bash
 npx hardhat run scripts/deploy.js --network rinkeby
 ```
+
+- To set up the networks we will edit our "hardhat.config.js" file
+
+```js
+require("@nomiclabs/hardhat-waffle");
+
+/**
+ * @type import('hardhat/config').HardhatUserConfig
+ */
+module.exports = {
+  solidity: "0.8.4",
+  networks: {
+    rinkeby: {
+      url: "alchemy url (http)",
+      accounts: ["Account_private_key"],
+    },
+  },
+};
+```

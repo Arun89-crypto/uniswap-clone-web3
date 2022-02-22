@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ethLogo from '../assets/eth.png'
 import uniswapLogo from '../assets/uniswap.png'
 import { FiArrowUpRight } from 'react-icons/fi'
@@ -25,6 +25,14 @@ const style = {
 const Header = () => {
   const [selectedNav, setSelectedNav] = useState('swap')
   const { connectWallet, currentAccount } = useContext(TransactionContext)
+  const [userName, setUserName] = useState('')
+
+  useEffect(() => {
+    if (currentAccount !== undefined) {
+      setUserName(`${currentAccount.slice(0, 7)}...${currentAccount.slice(35)}`)
+    }
+  }, [currentAccount])
+
   return (
     <div className={style.wrapper}>
       <div className={style.headerLogo}>
@@ -79,7 +87,7 @@ const Header = () => {
         </div>
         {currentAccount ? (
           <div className={`${style.button} ${style.buttonPadding}`}>
-            <div className={style.buttonTextContainer}>0x989...56</div>
+            <div className={style.buttonTextContainer}>{userName}</div>
           </div>
         ) : (
           <div
